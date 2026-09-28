@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaween Hasaranga | Materials Science & Engineering</title>
+  <meta name="description" content="Portfolio of Kaween Hasaranga, Materials Science and Engineering Undergraduate at University of Moratuwa.">
+  <style>
+    /* =====================
+       BASIC SETTINGS
+    ===================== */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+    html{
+      scroll-behavior:smooth;
+    }
+    body{
+      font-family:"Segoe UI",Arial,sans-serif;
+      background:
+        radial-gradient(circle at 10% 20%, #0a1a2f, #07111f 70%);
+      color:#f8fafc;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    :root{
+      --primary:#38bdf8;
+      --secondary:#818cf8;
+      --accent:#fbbf24;
+      --card:rgba(255,255,255,0.06);
+      --border:rgba(255,255,255,0.12);
+      --muted:#94a3b8;
+    }
+    /* =====================
+       NAVIGATION BAR
+    ===================== */
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(7,17,31,0.75);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-container{
+      max-width:1200px;
+      margin:auto;
+      padding:16px 30px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    .logo{
+      font-size:28px;
+      font-weight:800;
+      text-decoration:none;
+      color:white;
+      letter-spacing:-0.5px;
+    }
+    .logo span{
+      color:var(--primary);
+      font-size:32px;
+      text-shadow:0 0 12px #38bdf8;
+    }
+    .nav-links{
+      display:flex;
+      gap:8px;
+    }
+    .nav-links a{
+      text-decoration:none;
+      color:#cbd5e1;
+      padding:8px 16px;
+      border-radius:30px;
+      font-weight:600;
+      font-size:15px;
+      transition:0.3s;
+      border:1px solid transparent;
+    }
+    .nav-links a:hover{
+      background:rgba(56,189,248,0.15);
+      border-color:rgba(56,189,248,0.5);
+      color:var(--primary);
+      transform:translateY(-2px);
+    }
+    .contact-link{
+      background:var(--primary);
+      color:#07111f!important;
+      box-shadow:0 0 18px rgba(56,189,248,0.4);
+    }
+    .contact-link:hover{
+      background:white!important;
+      border-color:white!important;
+      color:#07111f!important;
+    }
+    /* =====================
+       HERO SECTION
+    ===================== */
+    .hero{
+      max-width:1200px;
+      min-height:90vh;
+      margin:auto;
+      padding:60px 30px;
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      align-items:center;
+      gap:50px;
+    }
+    .hero-tag{
+      display:inline-block;
+      padding:8px 20px;
+      border-radius:40px;
+      background:rgba(56,189,248,0.12);
+      color:#7dd3fc;
+      margin-bottom:20px;
+      font-weight:500;
+      letter-spacing:0.3px;
+      backdrop-filter:blur(4px);
+    }
+    .hero h1{
+      font-size:64px;
+      line-height:1.15;
+      font-weight:800;
+    }
+    .hero h1 span{
+      display:inline-block;
+      color:#fbbf24;
+      position:relative;
+      animation:nameShake 1.8s infinite;
+      text-shadow:
+        3px 3px 0px #f97316,
+        -2px -2px 0px rgba(56,189,248,0.7);
+    }
+    @keyframes nameShake{
+      0%{ transform:translate(0); }
+      5%{ transform:translate(-2px,2px); }
+      10%{ transform:translate(2px,-1px); }
+      15%{ transform:translate(-1px,2px); }
+      20%{ transform:translate(1px,-1px); }
+      25%{ transform:translate(0); }
+      100%{ transform:translate(0); }
+    }
+    .hero h1 span::before,
+    .hero h1 span::after{
+      content:"Kaween Hasaranga";
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      overflow:hidden;
+      pointer-events:none;
+    }
+    .hero h1 span::before{
+      color:#38bdf8;
+      transform:translate(-2px,0);
+      opacity:0.7;
+      animation:glitch1 2.5s infinite;
+      text-shadow:none;
+    }
+    .hero h1 span::after{
+      color:#f97316;
+      transform:translate(2px,0);
+      opacity:0.7;
+      animation:glitch2 1.9s infinite;
+      text-shadow:none;
+    }
+    @keyframes glitch1{
+      0%,100%{ clip-path:inset(0 0 80% 0); }
+      50%{ clip-path:inset(20% 0 40% 0); }
+    }
+    @keyframes glitch2{
+      0%,100%{ clip-path:inset(70% 0 0 0); }
+      50%{ clip-path:inset(40% 0 20% 0); }
+    }
+    .hero h2{
+      margin:18px 0 22px;
+      color:#cbd5e1;
+      font-weight:400;
+      font-size:24px;
+      letter-spacing:-0.2px;
+      border-left:4px solid var(--primary);
+      padding-left:20px;
+    }
+    .hero-description{
+      color:var(--muted);
+      font-size:17px;
+      max-width:650px;
+      text-align:justify;
+      line-height:1.9;
+    }
+    .hero-buttons{
+      margin-top:30px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+    }
+    .button{
+      display:inline-block;
+      padding:14px 34px;
+      border-radius:40px;
+      text-decoration:none;
+      font-weight:700;
+      transition:0.3s;
+      font-size:16px;
+      letter-spacing:0.3px;
+      border:1px solid transparent;
+    }
+    .button-primary{
+      background:var(--primary);
+      color:#07111f;
+      box-shadow:0 10px 25px -8px #38bdf8;
+    }
+    .button-primary:hover{
+      background:white;
+      box-shadow:0 0 35px #38bdf8;
+      transform:scale(1.03);
+    }
+    .button-outline{
+      border:1px solid var(--primary);
+      color:white;
+      background:transparent;
+    }
+    .button-outline:hover{
+      background:rgba(56,189,248,0.2);
+      border-color:white;
+      transform:scale(1.03);
+    }
+    /* PROFILE */
+    .profile-wrapper{
+      display:flex;
+      justify-content:center;
+      position:relative;
+      filter:drop-shadow(0 0 30px rgba(56,189,248,0.4));
+    }
+    .profile-image{
+      width:380px;
+      height:450px;
+      object-fit:cover;
+      border-radius:25px;
+      border:3px solid #38bdf8;
+      box-shadow:
+        0 0 35px rgba(56,189,248,0.7),
+        0 0 80px rgba(56,189,248,0.3);
+      transition:0.4s;
+      background:#111e2e;
+    }
+    .profile-image:hover{
+      transform:scale(1.04);
+      box-shadow:
+        0 0 55px rgba(56,189,248,0.9),
+        0 0 100px rgba(56,189,248,0.5);
+    }
+    .material-tags{
+      margin-top:30px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .material-tags span{
+      padding:10px 22px;
+      border-radius:40px;
+      background:rgba(56,189,248,0.1);
+      border:1px solid rgba(56,189,248,0.35);
+      color:#7dd3fc;
+      font-size:14px;
+      transition:0.3s;
+      backdrop-filter:blur(4px);
+      font-weight:500;
+    }
+    .material-tags span:hover{
+      background:#38bdf8;
+      color:#07111f;
+      transform:translateY(-3px);
+      border-color:#38bdf8;
+    }
+    /* =====================
+       COMMON SECTION
+    ===================== */
+    section{
+      max-width:1200px;
+      margin:auto;
+      padding:80px 30px;
+    }
+    .section-title{
+      font-size:42px;
+      color:var(--primary);
+      margin-bottom:45px;
+      font-weight:700;
+      letter-spacing:-0.5px;
+      position:relative;
+      display:inline-block;
+    }
+    .section-title::after{
+      content:'';
+      position:absolute;
+      bottom:-12px;
+      left:0;
+      width:70%;
+      height:3px;
+      background:linear-gradient(90deg, var(--primary), transparent);
+      border-radius:4px;
+    }
+    /* =====================
+       ABOUT SECTION
+    ===================== */
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:35px;
+    }
+    .about-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      padding:35px;
+      border-radius:24px;
+      backdrop-filter:blur(8px);
+      transition:.4s;
+      box-shadow:0 20px 35px -15px rgba(0,0,0,0.6);
+    }
+    .about-card:hover{
+      transform:translateY(-10px);
+      border-color:rgba(56,189,248,0.4);
+      background:rgba(56,189,248,0.06);
+      box-shadow:0 25px 40px -12px #38bdf8;
+    }
+    .about-card h3{
+      color:var(--accent);
+      margin-bottom:18px;
+      font-size:24px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .about-card p{
+      color:#cbd5e1;
+      font-size:16px;
+      line-height:1.9;
+    }
+    /* =====================
+       SKILLS SECTION
+    ===================== */
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+    }
+    .skill-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      padding:35px 28px;
+      border-radius:28px;
+      backdrop-filter:blur(8px);
+      transition:.35s;
+      box-shadow:0 15px 30px -15px black;
+    }
+    .skill-card:hover{
+      transform:translateY(-12px);
+      background:rgba(56,189,248,.1);
+      border-color:#38bdf8;
+      box-shadow:0 30px 40px -18px #38bdf8;
+    }
+    .skill-icon{
+      font-size:45px;
+      margin-bottom:20px;
+      filter:drop-shadow(0 0 12px #38bdf8);
+    }
+    .skill-card h3{
+      color:var(--accent);
+      margin-bottom:20px;
+      font-size:22px;
+    }
+    .skill-list{
+      list-style:none;
+      color:#cbd5e1;
+    }
+    .skill-list li{
+      margin:12px 0;
+      font-size:16px;
+      display:flex;
+      align-items:center;
+    }
+    .skill-list li::before{
+      content:"▹";
+      color:var(--primary);
+      font-weight:bold;
+      margin-right:10px;
+      font-size:18px;
+    }
+    /* =====================
+       PROJECTS
+    ===================== */
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+    }
+    .project-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      padding:32px 28px;
+      border-radius:28px;
+      backdrop-filter:blur(8px);
+      transition:.4s;
+      box-shadow:0 15px 25px -12px black;
+      display:flex;
+      flex-direction:column;
+    }
+    .project-card:hover{
+      transform:translateY(-12px);
+      border-color:var(--primary);
+      background:rgba(56,189,248,0.08);
+      box-shadow:0 30px 45px -15px #38bdf8;
+    }
+    .project-number{
+      color:var(--primary);
+      font-weight:700;
+      margin-bottom:16px;
+      font-size:14px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+    .project-card h3{
+      color:var(--accent);
+      margin-bottom:16px;
+      font-size:22px;
+      line-height:1.3;
+    }
+    .project-card p{
+      color:#cbd5e1;
+      text-align:justify;
+      line-height:1.8;
+      letter-spacing:0.2px;
+      font-size:15px;
+      flex:1;
+    }
+    .project-tech{
+      margin-top:22px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .project-tech span{
+      display:inline-block;
+      background:rgba(56,189,248,.15);
+      color:#7dd3fc;
+      padding:6px 14px;
+      border-radius:30px;
+      font-size:12px;
+      font-weight:500;
+      border:1px solid rgba(56,189,248,0.2);
+    }
+    /* =====================
+       ACHIEVEMENTS
+    ===================== */
+    .achievement-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:30px;
+    }
+    .achievement-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      padding:35px 28px;
+      border-radius:28px;
+      backdrop-filter:blur(8px);
+      transition:.3s;
+    }
+    .achievement-card:hover{
+      transform:translateY(-6px);
+      border-color:var(--accent);
+      background:rgba(251,191,36,0.05);
+    }
+    .achievement-card h3{
+      color:var(--accent);
+      margin-bottom:14px;
+      font-size:22px;
+    }
+    .achievement-card p{
+      color:#cbd5e1;
+      line-height:1.8;
+    }
+    /* =====================
+       EXPERIENCE
+    ===================== */
+    .experience-card{
+      background:var(--card);
+      border-left:6px solid var(--primary);
+      padding:40px 40px;
+      border-radius:24px;
+      backdrop-filter:blur(8px);
+      box-shadow:0 20px 30px -12px black;
+      transition:.3s;
+    }
+    .experience-card:hover{
+      border-left-color:var(--accent);
+      background:rgba(56,189,248,0.05);
+    }
+    .experience-card h3{
+      color:var(--accent);
+      font-size:28px;
+      font-weight:700;
+    }
+    .experience-role{
+      color:var(--primary);
+      margin:10px 0 20px;
+      font-size:18px;
+      font-weight:600;
+    }
+    .experience-list{
+      color:#cbd5e1;
+      padding-left:22px;
+      font-size:16px;
+    }
+    .experience-list li{
+      margin:10px 0;
+    }
+    /* =====================
+       CONTACT
+    ===================== */
+    .contact-container{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:35px;
+    }
+    .contact-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      padding:40px;
+      border-radius:28px;
+      backdrop-filter:blur(8px);
+    }
+    .contact-card h3{
+      color:var(--accent);
+      font-size:28px;
+      margin-bottom:20px;
+    }
+    .contact-card p{
+      color:var(--muted);
+      margin:15px 0;
+    }
+    .contact-item{
+      display:block;
+      padding:14px 18px;
+      color:#cbd5e1;
+      text-decoration:none;
+      font-size:18px;
+      border-radius:14px;
+      transition:0.3s;
+      margin:8px 0;
+      background:rgba(255,255,255,0.02);
+      border:1px solid transparent;
+    }
+    .contact-item:hover{
+      background:rgba(56,189,248,0.12);
+      border-color:rgba(56,189,248,0.4);
+      color:white;
+      transform:translateX(8px);
+    }
+    /* =====================
+       FOOTER
+    ===================== */
+    footer{
+      text-align:center;
+      padding:40px 30px;
+      border-top:1px solid var(--border);
+      color:#94a3b8;
+      font-size:16px;
+      background:rgba(0,0,0,0.2);
+    }
+    footer span{
+      color:var(--primary);
+      font-weight:500;
+      letter-spacing:0.5px;
+    }
+    /* =====================
+       RESPONSIVE
+    ===================== */
+    @media(max-width:1000px){
+      .hero h1{ font-size:50px; }
+    }
+    @media(max-width:900px){
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding-top:40px;
+      }
+      .hero h2{
+        border-left:none;
+        padding-left:0;
+        text-align:center;
+      }
+      .hero-description{
+        margin:0 auto;
+        text-align:center;
+      }
+      .hero-buttons{
+        justify-content:center;
+      }
+      .material-tags{
+        justify-content:center;
+      }
+      .nav-container{
+        flex-direction:column;
+        gap:16px;
+        padding:16px 20px;
+      }
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+      .skills-grid,
+      .projects-grid,
+      .achievement-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+      }
+      .about-grid,
+      .contact-container{
+        grid-template-columns:1fr;
+      }
+      .section-title{
+        font-size:36px;
+      }
+      .profile-image{
+        width:300px;
+        height:360px;
+      }
+    }
+    @media(max-width:500px){
+      .hero h1{ font-size:38px; }
+      .hero h1 span{
+        text-shadow:1px 1px 0 #f97316, -1px -1px 0 rgba(56,189,248,0.7);
+      }
+      .profile-image{
+        width:100%;
+        height:auto;
+        max-width:340px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- =====================
+       NAVIGATION
+  ===================== -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">Kaween<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact" class="contact-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =====================
+       HERO
+  ===================== -->
+  <header class="hero" id="home">
+    <div>
+      <h1>Hi, I'm <span>Kaween Hasaranga</span></h1>
+      <h2>Exploring Materials Innovation Through Science & Engineering</h2>
+      <p class="hero-description">
+        Exploring the relationship between material structure, properties, and performance
+        through polymer science, electronic materials, and advanced engineering applications.
+        Passionate about developing sustainable and functional materials solutions for real-world challenges.
+      </p>
+      <div class="material-tags">
+        <span>🧪 Polymer Science</span>
+        <span>⚡ Electronic Materials</span>
+        <span>🏗️ Construction Materials</span>
+        <span>🔬 Material Characterization</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="#projects" class="button button-primary">View Projects</a>
+        <a href="CV/Kaween_Hasaranga_CV_CEAT_Internship.pdf" download class="button button-outline">Download CV</a>
+      </div>
+    </div>
+    <div class="profile-wrapper">
+      <img class="profile-image" src="images/profile.jpeg" alt="Kaween Hasaranga">
+    </div>
+  </header>
+
+  <!-- =====================
+       ABOUT
+  ===================== -->
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>🧬 Materials Perspective</h3>
+        <p>
+          I am interested in understanding how processing techniques
+          and material structures influence final properties.
+          My focus is on exploring polymers, electronic materials,
+          and construction materials to develop materials with improved
+          performance, reliability, and sustainability.
+        </p>
+      </div>
+      <div class="about-card">
+        <h3>🔬 Areas of Interest</h3>
+        <p>
+          My main interests include polymer science, electronic materials,
+          and construction materials. I am interested in exploring innovative
+          materials that improve functionality, durability, and sustainability
+          in engineering applications.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       SKILLS
+  ===================== -->
+  <section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🔬</div>
+        <h3>Materials Engineering</h3>
+        <ul class="skill-list">
+          <li>Materials Characterization</li>
+          <li>SEM Analysis</li>
+          <li>XRD Analysis</li>
+          <li>Nanomaterials</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚙️</div>
+        <h3>Engineering Tools</h3>
+        <ul class="skill-list">
+          <li>AutoCAD</li>
+          <li>SolidEdge</li>
+          <li>SolidWorks</li>
+          <li>Mechanical Design</li>
+          <li>Engineering Analysis</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <h3>Programming & Software</h3>
+        <ul class="skill-list">
+          <li>Python</li>
+          <li>HTML & CSS</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       PROJECTS
+  ===================== -->
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <!-- Project 01 -->
+      <div class="project-card">
+        <div class="project-number">PROJECT 01 | 2025</div>
+        <h3>🐔 Automatic Chicken Coop Door System</h3>
+        <p>
+          <strong>Engineering Design Project — Finalist, IESE</strong><br><br>
+          Developed an automated chicken coop door system to improve
+          poultry management and reduce manual operation.
+          Investigated automatic opening/closing mechanisms, time-based
+          operation, environmental conditions, user safety, and reliable
+          mechanical movement.
+          Integrated mechanical components, sensors, control electronics,
+          and actuator mechanisms followed by system testing and
+          performance evaluation.
+        </p>
+        <div class="project-tech">
+          <span>Mechanical Design</span>
+          <span>Automation</span>
+          <span>ESP8266</span>
+          <span>Control Systems</span>
+        </div>
+      </div>
+      <!-- Project 02 -->
+      <div class="project-card">
+        <div class="project-number">PROJECT 02 | 2026</div>
+        <h3>🥩 Ammonia Spoilage in Meat: Kinetic Analysis</h3>
+        <p>
+          <strong>Materials / Kinetic Project</strong><br><br>
+          Investigated ammonia formation during meat spoilage as a
+          potential indicator of deterioration and food quality.
+          Studied the relationship between ammonia concentration,
+          spoilage time, and environmental conditions by analysing
+          the reaction kinetics of ammonia generation.
+          Applied kinetic models and experimental data analysis to
+          evaluate ammonia monitoring as a spoilage detection method.
+        </p>
+        <div class="project-tech">
+          <span>Reaction Kinetics</span>
+          <span>Data Analysis</span>
+          <span>Materials Chemistry</span>
+        </div>
+      </div>
+      <!-- Project 03 -->
+      <div class="project-card">
+        <div class="project-number">PROJECT 03 | 2026</div>
+        <h3>⚙️ Gearbox Design & Power Transmission Analysis</h3>
+        <p>
+          <strong>Mechanics of Machines / Engineering Design Project</strong><br><br>
+          Designed and analysed a gearbox system for power transmission,
+          torque control, and speed modification.
+          Evaluated gear selection, gear ratios, torque requirements,
+          and rotational speed using engineering calculations.
+          Developed suitable gear arrangements to achieve required
+          mechanical performance.
+        </p>
+        <div class="project-tech">
+          <span>Machine Design</span>
+          <span>CAD</span>
+          <span>Gear Analysis</span>
+          <span>Power Transmission</span>
+        </div>
+      </div>
+      <!-- Project 04 -->
+      <div class="project-card">
+        <div class="project-number">PROJECT 04 | 2026</div>
+        <h3>🔬 Quantum Dot Optical Emission for Cancer Detection</h3>
+        <p>
+          <strong>Nanomaterials / Electronic Materials Project</strong><br><br>
+          Investigated quantum dots as optical sensing materials for
+          potential cancer detection applications based on size-dependent
+          optical properties.
+          Studied the relationship between quantum-dot size, electronic
+          structure, energy levels, and photoluminescence emission.
+          Analysed optical emission changes as a detection mechanism
+          and evaluated material properties for biomedical sensing.
+        </p>
+        <div class="project-tech">
+          <span>Nanomaterials</span>
+          <span>Quantum Dots</span>
+          <span>Electronic Materials</span>
+          <span>Optical Properties</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       ACHIEVEMENTS
+  ===================== -->
+  <section id="achievements">
+    <h2 class="section-title">Achievements</h2>
+    <div class="achievement-grid">
+      <div class="achievement-card">
+        <h3>🏆 Engineering Projects</h3>
+        <p>Participated in engineering design projects focused on developing practical solutions.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>🏭 Industrial Exposure</h3>
+        <p>Gained industrial knowledge through manufacturing and engineering process visits.</p>
+      </div>
+      <div class="achievement-card">
+        <h3>📚 Academic Development</h3>
+        <p>Continuously developing knowledge in materials, engineering and emerging technologies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================
+       EXPERIENCE
+  ===================== -->
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="experience-card">
+      <h3>Engineering Student</h3>
+      <div class="experience-role">Materials Science & Engineering · University of Moratuwa</div>
+      <ul class="experience-list">
+        <li>Studying advanced materials and engineering concepts</li>
+        <li>Working on design and research-based projects</li>
+        <li>Developing technical and problem-solving skills</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =====================
+       CONTACT
+  ===================== -->
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-container">
+      <div class="contact-card">
+        <h3>Let's Connect</h3>
+        <a class="contact-item" href="mailto:hasaranga.23@uom.lk">📧 Email Me</a>
+        <a class="contact-item" href="#">💻 GitHub: your-github-link</a>
+        <a class="contact-item" href="https://www.linkedin.com/in/kaween-hasaranga-69454942b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">💼 LinkedIn Profile</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Kaween Hasaranga
+    <br>
+    <span>No Engineering without Materials</span>
+  </footer>
+</body>
+</html>
