@@ -748,6 +748,24 @@
     animation: none;
   }
 }
+/* Hero particle canvas */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-particles canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+}
 
   </style>
 </head>
@@ -773,7 +791,10 @@
        HERO
   ===================== -->
 
-  <header class="hero" id="home">
+  <header class="hero" id="hero">
+    <div class="hero-particles" id="hero-particles">
+      <canvas id="particle-canvas"></canvas>
+    </div>
     <div>
           <div class="name-glitch-container">
             <span class="name-greeting">Hi, I'm</span><br>
