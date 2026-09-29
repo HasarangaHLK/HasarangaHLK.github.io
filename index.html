@@ -712,6 +712,43 @@
   95% { clip: rect(45px, 9999px, 78px, 0); }
   100% { clip: rect(89px, 9999px, 34px, 0); }
 }
+
+/* ====================
+   ROBOT MASCOT
+   ==================== */
+#robot-mascot {
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  width: 200px;
+  height: 200px;
+  z-index: 1000;
+  pointer-events: none; /* Ensure it doesn't block clicks on the page */
+  transform-origin: bottom center;
+  animation: robot-wave 4s ease-in-out infinite;
+}
+
+#robot-mascot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@keyframes robot-wave {
+  0% { transform: rotate(0deg) translateY(0); }
+  10% { transform: rotate(6deg) translateY(-8px); }
+  20% { transform: rotate(-4deg) translateY(-4px); }
+  30% { transform: rotate(6deg) translateY(-8px); }
+  40% { transform: rotate(0deg) translateY(0); }
+  100% { transform: rotate(0deg) translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #robot-mascot {
+    animation: none;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -979,5 +1016,12 @@
     <br>
     <span>No Engineering without Materials</span>
   </footer>
+
+    <!-- Robot Mascot -->
+  <div id="robot-mascot">
+    <img src="/images/anime_robot_transparent.png" alt="Waving Robot" />
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
