@@ -451,6 +451,25 @@
       color:#cbd5e1;
       line-height:1.8;
     }
+    .achievement-card{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  overflow:hidden;
+}
+
+.achievement-image{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:20px;
+  margin-bottom:20px;
+  transition:0.4s;
+}
+
+.achievement-card:hover .achievement-image{
+  transform:scale(1.05);
+}
     /* =====================
        EXPERIENCE
     ===================== */
@@ -767,6 +786,177 @@
   overflow: hidden;
 }
 
+/* =====================
+ INDUSTRIAL EXPOSURE STYLE
+===================== */
+
+
+.industry-intro{
+
+max-width:900px;
+
+margin:0 auto 50px;
+
+text-align:center;
+
+color:#cbd5e1;
+
+font-size:18px;
+
+}
+
+
+
+.industry-container{
+
+display:flex;
+
+flex-direction:column;
+
+gap:40px;
+
+}
+
+
+
+.industry-card{
+
+display:grid;
+
+grid-template-columns:45% 55%;
+
+background:rgba(255,255,255,0.06);
+
+border:1px solid rgba(255,255,255,0.15);
+
+border-radius:30px;
+
+overflow:hidden;
+
+transition:.4s;
+
+}
+
+
+
+.industry-card:hover{
+
+transform:translateY(-8px);
+
+border-color:#38bdf8;
+
+box-shadow:0 15px 40px rgba(56,189,248,.2);
+
+}
+
+
+
+.industry-image img{
+
+width:100%;
+
+height:400px;
+
+object-fit:cover;
+
+}
+
+
+
+.industry-content{
+
+padding:10px;
+
+}
+
+
+
+.industry-tag{
+
+display:inline-block;
+
+background:rgba(56,189,248,.15);
+
+color:#7dd3fc;
+
+padding:6px 15px;
+
+border-radius:20px;
+
+font-size:14px;
+
+margin-bottom:15px;
+
+}
+
+
+
+.industry-content h3{
+
+font-size:30px;
+
+color:#fbbf24;
+
+margin-bottom:10px;
+
+}
+
+
+
+.location{
+
+color:#38bdf8;
+
+font-weight:600;
+
+}
+
+
+
+.industry-content p{
+
+color:#cbd5e1;
+
+}
+
+
+
+.industry-content h4{
+
+color:#38bdf8;
+
+margin-top:20px;
+
+}
+
+
+
+.industry-content ul{
+
+margin-left:20px;
+
+color:#cbd5e1;
+
+}
+
+
+
+@media(max-width:900px){
+
+.industry-card{
+
+grid-template-columns:1fr;
+
+}
+
+
+.industry-image img{
+
+height:300px;
+
+}
+
+}
   </style>
 </head>
 <body>
@@ -776,14 +966,15 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="#home" class="logo">Kaween<span>.</span></a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact" class="contact-link">Contact</a>
-      </div>
+<div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#industrial-exposure">Industrial Exposure</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact" class="contact-link">Contact</a>
+</div>
     </div>
   </nav>
 
@@ -814,7 +1005,7 @@
       </div>
       <div class="hero-buttons">
         <a href="#projects" class="button button-primary">View Projects</a>
-        <a href="CV/Kaween_Hasaranga_CV_CEAT_Internship.pdf" download class="button button-outline">Download CV</a>
+        <a href="Files/Kaween_Hasaranga_CV_CEAT_Internship.pdf" download class="button button-outline">Download CV</a>
       </div>
     </div>
     <div class="profile-wrapper">
@@ -981,25 +1172,338 @@
   </section>
 
   <!-- =====================
-       ACHIEVEMENTS
-  ===================== -->
-  <section id="achievements">
-    <h2 class="section-title">Achievements</h2>
-    <div class="achievement-grid">
-      <div class="achievement-card">
-        <h3>🏆 Engineering Projects</h3>
-        <p>Participated in engineering design projects focused on developing practical solutions.</p>
-      </div>
-      <div class="achievement-card">
-        <h3>🏭 Industrial Exposure</h3>
-        <p>Gained industrial knowledge through manufacturing and engineering process visits.</p>
-      </div>
-      <div class="achievement-card">
-        <h3>📚 Academic Development</h3>
-        <p>Continuously developing knowledge in materials, engineering and emerging technologies.</p>
-      </div>
-    </div>
-  </section>
+     ACHIEVEMENTS
+===================== -->
+<section id="achievements">
+  <h2 class="section-title">Achievements</h2>
+
+  <div class="achievement-grid">
+
+    <a href="coop.html" class="achievement-card">
+
+      <img src="images/coopdoor.jpg" 
+           alt="Automatic Chicken Coop Door System"
+           class="achievement-image">
+
+      <h3>🏆 Automatic Chicken Coop Door System</h3>
+
+      <p>
+        Engineering Design Project — Finalist, IESE.
+        Developed an automated chicken coop door system
+        integrating mechanical design, sensors, control electronics,
+        and actuator mechanisms for poultry management automation.
+      </p>
+
+    </a>
+
+  </div>
+</section>
+<!-- =====================
+ INDUSTRIAL EXPOSURE
+===================== -->
+
+<section id="industrial-exposure">
+
+
+<h2 class="section-title">
+Industrial Exposure
+</h2>
+
+
+
+
+
+
+<div class="industry-container">
+
+
+
+<!-- INSEE -->
+
+<div class="industry-card">
+
+
+<div class="industry-image">
+
+<img src="Images/Insee.jpeg"
+alt="INSEE Cement Factory Visit">
+
+</div>
+
+
+
+<div class="industry-content">
+
+
+<div class="industry-tag">
+Construction Materials Industry
+</div>
+
+
+<h3>
+🏭 INSEE Cement Factory Visit
+</h3>
+
+
+<p class="location">
+📍 Puttalam, Sri Lanka
+</p>
+
+
+
+<p>
+
+Observed cement manufacturing processes including raw
+material preparation, clinker production, grinding,
+quality control, and material handling operations.
+
+</p>
+
+
+
+<h4>Key Learning</h4>
+
+
+<ul>
+
+<li>Cement manufacturing process</li>
+
+<li>Raw material processing</li>
+
+<li>Industrial quality control</li>
+
+<li>Construction material applications</li>
+
+</ul>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- GPV -->
+
+
+<div class="industry-card">
+
+
+<div class="industry-image">
+
+<img src="Images/GPV.jpeg"
+alt="GPV Lanka Factory Visit">
+
+</div>
+
+
+
+<div class="industry-content">
+
+
+<div class="industry-tag">
+Electronics Manufacturing Industry
+</div>
+
+
+<h3>
+⚡ GPV Lanka Factory Visit
+</h3>
+
+
+<p class="location">
+📍 Sri Lanka
+</p>
+
+
+
+<p>
+
+Gained exposure to PCB assembly operations,
+soldering processes, wire harness manufacturing,
+transformer production, and industrial inspection methods.
+
+</p>
+
+
+
+<h4>Key Learning</h4>
+
+
+<ul>
+
+<li>PCB soldering processes</li>
+
+<li>Electronic material applications</li>
+
+<li>Manufacturing quality control</li>
+
+<li>Production workflow</li>
+
+</ul>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- OREL -->
+
+
+<div class="industry-card">
+
+
+<div class="industry-image">
+
+<img src="Images/Orel.jpeg"
+alt="OREL Factory Visit">
+
+</div>
+
+
+
+<div class="industry-content">
+
+
+<div class="industry-tag">
+Electrical & Electronics Industry
+</div>
+
+
+<h3>
+💡 OREL Factory Visit
+</h3>
+
+
+<p class="location">
+📍 Sri Lanka
+</p>
+
+
+
+<p>
+
+Observed electronic product manufacturing,
+assembly operations, and industrial production
+practices.
+
+</p>
+
+
+
+<h4>Key Learning</h4>
+
+
+<ul>
+
+<li>Electronic product assembly</li>
+
+<li>Industrial automation</li>
+
+<li>Manufacturing processes</li>
+
+<li>Product reliability considerations</li>
+
+</ul>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- ROCELL -->
+
+
+<div class="industry-card">
+
+
+<div class="industry-image">
+
+<img src="Images/Rocell.jpeg"
+alt="Rocell Factory Visit">
+
+</div>
+
+
+
+<div class="industry-content">
+
+
+<div class="industry-tag">
+Ceramic Materials Industry
+</div>
+
+
+<h3>
+🧱 Rocell Factory Visit
+</h3>
+
+
+<p class="location">
+📍 Horana, Sri Lanka
+</p>
+
+
+
+<p>
+
+Studied ceramic tile manufacturing including
+raw material preparation, forming, glazing,
+firing, and quality inspection processes.
+
+</p>
+
+
+
+<h4>Key Learning</h4>
+
+
+<ul>
+
+<li>Ceramic processing techniques</li>
+
+<li>Thermal processing</li>
+
+<li>Surface finishing</li>
+
+<li>Material quality evaluation</li>
+
+</ul>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
 
   <!-- =====================
        EXPERIENCE
@@ -1026,7 +1530,7 @@
       <div class="contact-card">
         <h3>Let's Connect</h3>
         <a class="contact-item" href="mailto:hasaranga.23@uom.lk">📧 Email Me</a>
-        <a class="contact-item" href="#">💻 GitHub: your-github-link</a>
+        
         <a class="contact-item" href="https://www.linkedin.com/in/kaween-hasaranga-69454942b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">💼 LinkedIn Profile</a>
       </div>
     </div>
